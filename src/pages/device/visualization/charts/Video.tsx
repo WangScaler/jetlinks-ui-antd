@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ComponentProps } from "..";
 import { message } from "antd";
-import VideoPlayer from "@/pages/demo/VideoPlayer";
 import Service from "../service";
+import FlashVideo from "@/components/VideoPlayer/FlashVideo";
 
 interface Props extends ComponentProps {
     config: any;
@@ -63,7 +63,8 @@ const Video: React.FC<Props> = (props) => {
     }, []);
 
     const renderVideo = () => {
-        return <VideoPlayer {...videoJsOptions} width={width} height={height} />
+        // return <VideoPlayer {...videoJsOptions} width={width} height={height} />
+        return <FlashVideo url={srcUrl || ''} width={width} height={height} />
     }
     return (
         <div >

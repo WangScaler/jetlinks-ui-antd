@@ -272,7 +272,7 @@ export const routes = [
                         iconfont: 'icon-tongzhiguanli',
                         icon: 'message',
                         tenant: ['admin', 'member'],
-                        authority: ['certificate', 'network-config', 'device-gateway', 'admin'],
+                        authority: ['certificate', 'network-config', 'device-gateway', , 'template', 'notifier', 'admin'],
                         routes: [
                             {
                                 path: '/notice/config',
@@ -345,7 +345,7 @@ export const routes = [
                             // },
                         ],
                     },
-                    {
+                    /*{
                         path: 'data-screen',
                         name: '大屏数据',
                         icon: 'desktop',
@@ -374,7 +374,7 @@ export const routes = [
                                 component: './data-screen/screen',
                             }
                         ]
-                    },
+                    },*/
                     {
                         path: 'logger',
                         name: '日志管理',
@@ -423,6 +423,21 @@ export const routes = [
                                 name: '通知订阅',
                                 icon: 'bell',
                                 component: './account/notification'
+                            }
+                        ]
+                    },
+                    {
+                        path: 'simulator',
+                        name: '模拟测试',
+                        icon: 'bug',
+                        authority: ['network-simulator', 'admin'],
+                        routes: [
+                            {
+                                path: '/simulator/device',
+                                name: '设备模拟器',
+                                icon: 'paper-clip',
+                                authority: ['network-simulator', 'admin'],
+                                component: './simulator/device',
                             }
                         ]
                     },
