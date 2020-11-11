@@ -17,6 +17,7 @@ import React, {useState} from 'react';
 import styles from '../index.less';
 import {groupBy} from 'lodash';
 import {Unit} from '@/utils/unit';
+import {renderUnit} from "@/pages/device/public";
 
 interface Props {
   save: (data: any) => void;
@@ -179,6 +180,7 @@ const Paramter: React.FC<Props> = props => {
                     </Select.OptGroup>
                   );
                 })}
+                {/*{renderUnit(props.unitsData)}*/}
               </Select>
             </Form.Item>
           </div>

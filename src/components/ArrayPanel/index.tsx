@@ -68,7 +68,6 @@ export const ArrayPanels: any = styled(
             bordered={false}
           >
             {toArr(value).map((item, index) => {
-              console.log(item, 'ttt');
               return (
                 <Collapse.Panel
                   className='panel-list-item'
@@ -114,6 +113,7 @@ export const ArrayPanels: any = styled(
                   size="small"
                   className={`panel-list-item panel-list-empty ${allowAddition ? 'add-pointer' : ''}`}
                   onClick={allowAddition ? onAdd : undefined}
+                  style={{ textAlign: 'center' }}
                 >
                   <div className="empty-wrapper">{children}</div>
                 </Card>
@@ -148,7 +148,7 @@ export const ArrayPanels: any = styled(
      .item-title{
         line-height:30px
       }
-      
+
       .ant-collapse-extra button{
         margin:0 3px 8px 2px
       }

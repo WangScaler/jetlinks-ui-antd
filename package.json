@@ -1,6 +1,6 @@
 {
   "name": "jetlinks",
-  "version": "1.5.0",
+  "version": "1.7.0",
   "private": true,
   "description": "Jetlinks 前端",
   "scripts": {
@@ -137,6 +137,7 @@
     "@types/styled-components": "^5.1.3",
     "@types/video.js": "^7.3.11",
     "@umijs/fabric": "^2.2.2",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "chalk": "^3.0.0",
     "check-prettier": "^1.0.3",
     "conventional-changelog-cli": "^2.1.0",

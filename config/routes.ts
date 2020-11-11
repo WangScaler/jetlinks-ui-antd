@@ -64,7 +64,7 @@ export const routes = [
                             },
                             {
                                 path: '/system/open-api',
-                                name: 'OpenApi客户端',
+                                name: '第三方平台',
                                 icon: 'share-alt',
                                 iconfont: 'icon-APIguanli',
                                 authority: ['open-api', 'admin'],
@@ -169,6 +169,7 @@ export const routes = [
                                 component: './device/instance/editor',
                             },
                             {
+                                hideInMenu: true,
                                 path: '/device/group',
                                 name: '分组',
                                 icon: 'gold',
@@ -177,6 +178,22 @@ export const routes = [
                                 version: 'pro',
                                 iconfont: 'icon-shebeifenzuguanli',
                                 component: './device/group',
+                            },
+                            {
+                                // hideInMenu: true,
+                                path: '/device/tree',
+                                name: '分组',
+                                tenant: ['admin', 'member'],
+                                authority: ['device-group', 'admin'],
+                                version: 'pro',
+                                icon: 'gold',
+                                component: './device/tree'
+                            },
+                            {
+                                hideInMenu: true,
+                                path: '/device/tree/detail',
+                                name: '分组详情',
+                                component: './device/tree/DeviceTree',
                             },
                             {
                                 hideInMenu: true,
@@ -223,6 +240,12 @@ export const routes = [
                                 iconfont: 'icon-gujianshengji',
                                 component: './device/firmware/editor',
                             },
+                            {
+                                path: '/device/alarm',
+                                name: '设备告警',
+                                icon: 'alert',
+                                component: './device/alarmlog',
+                            }
                         ],
                     },
                     {
@@ -345,13 +368,13 @@ export const routes = [
                             // },
                         ],
                     },
-                    /*{
+                    {
                         path: 'data-screen',
                         name: '大屏数据',
                         icon: 'desktop',
                         tenant: ['admin'],
                         iconfont: 'icon-icon-',
-                        // authority: ['admin'],
+                        authority: ['big-screen', 'admin'],
                         routes: [
                             {
                                 path: '/data-screen/category',
@@ -359,7 +382,7 @@ export const routes = [
                                 icon: 'appstore',
                                 tenant: ['admin'],
                                 iconfont: 'icon-category-search-fill',
-                                // authority: ['admin'],
+                                authority: ['big-screen', 'admin'],
                                 version: 'pro',
                                 component: './data-screen/category',
                             },
@@ -369,12 +392,27 @@ export const routes = [
                                 icon: 'fund',
                                 tenant: ['admin'],
                                 iconfont: 'icon-screen',
-                                // authority: ['admin'],
+                                authority: ['big-screen', 'admin'],
                                 version: 'pro',
                                 component: './data-screen/screen',
                             }
                         ]
-                    },*/
+                    },
+                    {
+                        path: 'simulator',
+                        name: '模拟测试',
+                        icon: 'bug',
+                        authority: ['network-simulator', 'admin'],
+                        routes: [
+                            {
+                                path: '/simulator/device',
+                                name: '设备模拟器',
+                                icon: 'paper-clip',
+                                authority: ['network-simulator', 'admin'],
+                                component: './simulator/device',
+                            }
+                        ]
+                    },
                     {
                         path: 'logger',
                         name: '日志管理',
@@ -401,6 +439,21 @@ export const routes = [
                         ],
                     },
                     {
+                        path: 'cloud',
+                        name: '云云对接',
+                        icon: 'cloud',
+                        authority: ['dueros-product', 'admin'],
+                        routes: [
+                            {
+                                path: '/cloud/duer',
+                                name: 'DuerOS',
+                                authority: ['dueros-product', 'admin'],
+                                icon: 'cloud',
+                                component: './cloud/dueros',
+                            }
+                        ]
+                    },
+                    {
                         path: 'account',
                         name: '个人中心',
                         icon: 'user',
@@ -423,21 +476,6 @@ export const routes = [
                                 name: '通知订阅',
                                 icon: 'bell',
                                 component: './account/notification'
-                            }
-                        ]
-                    },
-                    {
-                        path: 'simulator',
-                        name: '模拟测试',
-                        icon: 'bug',
-                        authority: ['network-simulator', 'admin'],
-                        routes: [
-                            {
-                                path: '/simulator/device',
-                                name: '设备模拟器',
-                                icon: 'paper-clip',
-                                authority: ['network-simulator', 'admin'],
-                                component: './simulator/device',
                             }
                         ]
                     },
