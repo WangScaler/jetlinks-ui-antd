@@ -9,6 +9,7 @@ import * as ruleEngine from '@/pages/rule-engine/service';
 import * as email from '@/pages/rule-engine/email/service';
 import * as sms from '@/pages/rule-engine/sms/service';
 import * as ruleInstance from '@/pages/rule-engine/instance/service';
+import * as scene from '@/pages/rule-engine/scene/service'
 import * as ruleModel from '@/pages/rule-engine/model/service';
 import * as protocol from '@/pages/device/protocol/service';
 import * as openApi from '@/pages/system/open-api/service';
@@ -37,6 +38,8 @@ import * as systemConfig from '@/pages/system/config/service';
 import * as notification from '@/pages/account/notification/service';
 import * as screen from '@/pages/data-screen/screen/service';
 import * as categoty from '@/pages/data-screen/category/service'
+import * as productCategoty from '@/pages/device/product-category/service'
+import * as aliyun from '@/pages/cloud/aliyun/service'
 
 const apis = {
   login,
@@ -50,6 +53,7 @@ const apis = {
   email,
   sms,
   ruleInstance,
+  scene, //场景联动
   ruleModel,
   protocol,
   openApi,
@@ -77,6 +81,8 @@ const apis = {
   deviceGroup,
   notification,
   screen,
-  categoty
+  categoty, //大屏分类
+  productCategoty,
+  aliyun, //阿里云
 };
 export default apis;
